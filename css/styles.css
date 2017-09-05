@@ -1,44 +1,73 @@
-body{
+body    {
     background: honeydew;
+    }
+img {
+    height: 75px;
+    width: 75px;
 }
-h1{
+h1  {
+    color: burlywood;
+    text-shadow: 2px 3px 5px black;
+    font-family: 'Indie Flower';
+    font-style: bold;
+    font-size: 72px;
     text-align: center;
-}
-#start{
-    float: center;
-}
-#time{
-text-align: center;
-}
-#startBtn{
-    font-size: 24px;
+    }
+h3  { 
+        color:brown;
+        font-family: 'Indie Flower';
+        font-style: bold;
+        text-align: center;
+        }
+    
+   
+.playerScore1    {
+    font-family: 'Indie Flower', cursive;
     color:brown;
-height: 50px;
-width: 100px;
-border-radius: 10%;
-background: burlywood;
+    font-size: 36px;  
+    float: left; 
+    }
 
-}
-.field{
-background-color: green;
-background: lightgreen;
+ .playerScore2    {
+    font-family: 'Indie Flower', cursive;
+    color: brown;
+    font-size: 36px;   
+    float: right; 
+        }
+
+#time   {
+    font-family: 'indie Flower';
+    color: brown;
+    font-size: 36px;
+    float: right;
+    text-align: center;
+    }
+#startBtn   {
+    font-family: 'Indie Flower', cursive;
+    font-style: bold;
+    font-size: 30px;
+    color:brown;
+    height: 50px;
+    width: 100px;
+    border-radius: 10%;
+    background: burlywood;
+    float: left;
+    }
+.hole {
+background-color:rgb(0, 155, 0);
+background: rgb(0, 155, 0);
 width: 75px;
 height: 75px;
 display: inline-block;
-border-radius: 50%;
 vertical-align: top;
-text-align: center;
-font-size: 80px;
 
 
-
-}
+    }
 
 .board {
     width: 800px;
     height: 400px;
     border-radius: 2%;
-    background-color: green;
-
-
+    background-color: rgb(0, 155, 0);
+    margin: 0 0 0 150px;
 }

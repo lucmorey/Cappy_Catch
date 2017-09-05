@@ -7,11 +7,14 @@ var $squares = $('.square')
 var $capybaras = $('img.capybara')
 var $quokkas = $('img.quokka')
 var $allImgs = $('img.piece')
-var randomMoveInterval = null
+var randomMoveInterval = null 
+var startBtn = $('#startBtn')
+var timer = $('#timer')
 
 function randomInt (n) {
         return Math.floor(Math.random()*n)
 }
+
 function $randomUnpopulatedSquare() {
     var $randomSquare = $squares.eq(randomInt($squares.length))
     if($randomSquare.html()){
@@ -24,10 +27,45 @@ function $randomUnpopulatedSquare() {
 $allImgs.on('click', function() {
     $randomUnpopulatedSquare().append($(this))
 })
+
 $('#startBtn').on('click', function() {
- randomMoveInterval = setInterval(function(){
-    $allImgs.each(function(index, $el) {
-        $randomUnpopulatedSquare().append($el)
-    })
-}, 1500)
+    $('#remainingTime').html(counter)
+    countdownTimer = setInterval(countdown, 1000)
+    randomMoveInterval = setInterval(function(){
+        $allImgs.each(function(index, $el) {
+            $randomUnpopulatedSquare().append($el)
+        })
+    }, 1500)
 })
+
+//timers here
+
+var resetInt
+var counter = 30
+
+
+function countdown(){
+    if (counter === 0){
+        clearInterval(countdownTimer)
+        $('#remainingTime').html(counter)
+        clearInterval(randomMoveInterval)
+    } else {
+        counter = counter - 1
+        $('#remainingTime').html(counter)
+    }
+}
+
+//track scores here
+
+
+
+
+
+
+
+
+
+
+//function switch player turn + compare scores + anounce winner
+
+

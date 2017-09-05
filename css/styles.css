@@ -21,14 +21,14 @@ h3  {
         }
     
    
-.playerScore1    {
+.player1Score    {
     font-family: 'Indie Flower', cursive;
     color:brown;
     font-size: 36px;  
     float: left; 
     }
 
- .playerScore2    {
+ .player2Score    {
     font-family: 'Indie Flower', cursive;
     color: brown;
     font-size: 36px;   
@@ -53,7 +53,7 @@ h3  {
     background: burlywood;
     float: left;
     }
-.hole {
+.square {
 background-color:rgb(0, 155, 0);
 background: rgb(0, 155, 0);
 width: 75px;
@@ -69,5 +69,5 @@ vertical-align: top;
     height: 400px;
     border-radius: 2%;
     background-color: rgb(0, 155, 0);
-    margin: 0 0 0 150px;
+    margin: 0 0 0 170px;
 }

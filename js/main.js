@@ -1,5 +1,5 @@
 console.log('here')
-$
+
 
 var capybaraIMG = $("<img src= 'capybara.jpg' alt=''>")
 var quokkaIMG = $("<img src= 'quokka.png' alt=''>")
@@ -10,9 +10,14 @@ var $allImgs = $('img.piece')
 var randomMoveInterval = null 
 var startBtn = $('#startBtn')
 var timer = $('#timer')
+var currentPlayerScore = 0
+
+var $player1Score = $('#player1Score')
+var $player2Score = $('#player2Score')
+
 
 function randomInt (n) {
-        return Math.floor(Math.random()*n)
+    return Math.floor(Math.random()*n)
 }
 
 function $randomUnpopulatedSquare() {
@@ -56,6 +61,23 @@ function countdown(){
 }
 
 //track scores here
+
+function setScore() {
+    $player1Score.text(currentPlayerScore)
+}
+
+
+$capybaras.on('click', function() {
+    currentPlayerScore += 75
+    setScore()
+})
+    
+$quokkas.on('click', function() {
+    currentPlayerScore -= 150
+    setScore()
+
+})
+  
 
 
 

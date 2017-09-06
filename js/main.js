@@ -12,6 +12,8 @@ var startBtn = $('#startBtn')
 var timer = $('#timer')
 var currentPlayerScore = 0
 
+var whichPlayer = 1 // ====
+
 var $player1Score = $('#player1Score')
 var $player2Score = $('#player2Score')
 
@@ -54,6 +56,11 @@ function countdown(){
         clearInterval(countdownTimer)
         $('#remainingTime').html(counter)
         clearInterval(randomMoveInterval)
+
+        //========
+        whichPlayer = 2
+        counter = 30
+        currentPlayerScore = 0
     } else {
         counter = counter - 1
         $('#remainingTime').html(counter)
@@ -63,7 +70,13 @@ function countdown(){
 //track scores here
 
 function setScore() {
-    $player1Score.text(currentPlayerScore)
+    if (whichPlayer === 1) {
+    $player1Score.text(currentPlayerScore) 
+}
+    else {
+        $player2Score.text(currentPlayerScore)
+    }
+
 }
 
 
@@ -80,7 +93,7 @@ $quokkas.on('click', function() {
   
 
 
-
+//
 
 
 

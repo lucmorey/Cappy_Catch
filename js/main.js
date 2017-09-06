@@ -16,7 +16,7 @@ var $player1Score = $('#player1Score')
 var $player2Score = $('#player2Score')
 var p1 = 0
 var p2 = 0 
-
+var clickSound = new Audio('capybaraClickSound.mp3')
 
 function randomInt (n) {
     return Math.floor(Math.random()*n)
@@ -32,6 +32,7 @@ function $randomUnpopulatedSquare() {
 }
 
 $allImgs.on('click', function() {
+    clickSound.play()
     $randomUnpopulatedSquare().append($(this))
 })
 

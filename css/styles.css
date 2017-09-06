@@ -1,5 +1,6 @@
 body    {
     background: honeydew;
+    background: -webkit-linear-gradient(honeydew, #FDD77F);
     }
 img {
     height: 75px;
@@ -18,6 +19,7 @@ h3  {
         font-family: 'Indie Flower';
         font-style: bold;
         text-align: center;
+         
         }
     
    
@@ -55,25 +57,26 @@ h3  {
     width: 100px;
     border-radius: 10%;
     background: burlywood;
+    box-shadow: 2px 3px 2px black;
     float: left;
     }
 .square {
-background-color:rgb(0, 155, 0);
-background: rgb(0, 155, 0);
+/* background-color:rgba(0, 155, 0, 0.00);
+background: rgb(0, 155, 0); */
 width: 75px;
 height: 75px;
 display: inline-block;
 vertical-align: top;
-
-
     }
 
 .board {
     width: 800px;
     height: 400px;
     border-radius: 2%;
-    background-color: rgb(0, 155, 0);
+    background-color: rgb(0, 255, 0);
     margin: 0 0 0 170px;
+    background:url('../grass.jpg')
+     
 }
 .overlay {
     width: 100%;

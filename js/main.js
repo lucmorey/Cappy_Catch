@@ -11,11 +11,11 @@ var randomMoveInterval = null
 var startBtn = $('#startBtn')
 var timer = $('#timer')
 var currentPlayerScore = 0
-
-var whichPlayer = 1 // ====
-
+var whichPlayer = 1 
 var $player1Score = $('#player1Score')
 var $player2Score = $('#player2Score')
+var p1 = 0
+var p2 = 0 
 
 
 function randomInt (n) {
@@ -36,6 +36,7 @@ $allImgs.on('click', function() {
 })
 
 $('#startBtn').on('click', function() {
+    $('.overlay').hide()
     $('#remainingTime').html(counter)
     countdownTimer = setInterval(countdown, 1000)
     randomMoveInterval = setInterval(function(){
@@ -45,40 +46,60 @@ $('#startBtn').on('click', function() {
     }, 1500)
 })
 
-//timers here
-
 var resetInt
-var counter = 30
-
+var counter = 20
 
 function countdown(){
     if (counter === 0){
         clearInterval(countdownTimer)
         $('#remainingTime').html(counter)
         clearInterval(randomMoveInterval)
-
-        //========
+        endOfGame()
+        setScore()
+        $('.overlay').show()
+        if (whichPlayer === 1 ){
+            alert("Player 2's Turn")
+         }
         whichPlayer = 2
-        counter = 30
+        counter = 20
         currentPlayerScore = 0
-    } else {
+
+         }
+      else {
         counter = counter - 1
         $('#remainingTime').html(counter)
     }
 }
 
-//track scores here
-
 function setScore() {
     if (whichPlayer === 1) {
-    $player1Score.text(currentPlayerScore) 
-}
+        $player1Score.text(currentPlayerScore) //setting text on screen
+        p1 = currentPlayerScore //storing the score in memory for later
+    }
     else {
         $player2Score.text(currentPlayerScore)
+        p2 = currentPlayerScore
     }
-
+    console.log(p1, p2)
 }
-
+function checkScore() {
+    console.log(p1, p2)
+    
+    if (p2 > p1) {
+        alert("Player 2 Wins!")
+    }
+    else if (p2 === p1) {
+        alert("It's a Tie!")
+    }
+    else (
+        alert("Player 1 Wins!")
+    )
+}
+function endOfGame() {
+    if (whichPlayer === 2 && counter === 0) {
+        checkScore() }
+    
+}
 
 $capybaras.on('click', function() {
     currentPlayerScore += 75
@@ -92,7 +113,7 @@ $quokkas.on('click', function() {
 })
   
 
-
+endOfGame()
 //
 
 

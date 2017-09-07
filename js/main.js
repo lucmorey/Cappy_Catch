@@ -1,6 +1,3 @@
-console.log('here')
-
-
 var capybaraIMG = $("<img src= 'capybara.jpg' alt=''>")
 var quokkaIMG = $("<img src= 'quokka.png' alt=''>")
 var $squares = $('.square')
@@ -9,6 +6,7 @@ var $quokkas = $('img.quokka')
 var $allImgs = $('img.piece')
 var randomMoveInterval = null 
 var startBtn = $('#startBtn')
+var $resetBtn = $('#resetBtn')
 var timer = $('#timer')
 var currentPlayerScore = 0
 var whichPlayer = 1 
@@ -19,6 +17,13 @@ var p2 = 0
 var clickSound = new Audio('capybaraClickSound.mp3')
 var backgroundMusic = new Audio('calliope.mp3')
 var squeakSound = new Audio('squeak.mp3')
+
+
+
+    $resetBtn.on('click', function() {
+        location.reload()
+    })
+
 
 function randomInt (n) {
     return Math.floor(Math.random()*n)
@@ -61,7 +66,7 @@ function countdown(){
         setScore()
         $('.overlay').show()
         if (whichPlayer === 1 ){
-            alert("Player 2's Turn")
+            alert('Player 2"s Turn, click "START" to begin.')
          }
         whichPlayer = 2
         counter = 30
@@ -83,10 +88,10 @@ function setScore() {
         $player2Score.text(currentPlayerScore)
         p2 = currentPlayerScore
     }
-    console.log(p1, p2)
+    // console.log(p1, p2)
 }
 function checkScore() {
-    console.log(p1, p2)
+    // console.log(p1, p2)
     
     if (p2 > p1) {
         alert("Player 2 Wins!")
@@ -116,17 +121,6 @@ $quokkas.on('click', function() {
     setScore()
 
 })
-  
+ 
 
 endOfGame()
-//
-
-
-
-
-
-
-
-//function switch player turn + compare scores + anounce winner
-
-

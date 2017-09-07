@@ -17,6 +17,8 @@ var $player2Score = $('#player2Score')
 var p1 = 0
 var p2 = 0 
 var clickSound = new Audio('capybaraClickSound.mp3')
+var backgroundMusic = new Audio('calliope.mp3')
+var squeakSound = new Audio('squeak.mp3')
 
 function randomInt (n) {
     return Math.floor(Math.random()*n)
@@ -32,12 +34,12 @@ function $randomUnpopulatedSquare() {
 }
 
 $allImgs.on('click', function() {
-    clickSound.play()
     $randomUnpopulatedSquare().append($(this))
 })
 
 $('#startBtn').on('click', function() {
     $('.overlay').hide()
+    backgroundMusic.play()
     $('#remainingTime').html(counter)
     countdownTimer = setInterval(countdown, 1000)
     randomMoveInterval = setInterval(function(){
@@ -48,7 +50,7 @@ $('#startBtn').on('click', function() {
 })
 
 var resetInt
-var counter = 20
+var counter = 30
 
 function countdown(){
     if (counter === 0){
@@ -62,7 +64,7 @@ function countdown(){
             alert("Player 2's Turn")
          }
         whichPlayer = 2
-        counter = 20
+        counter = 30
         currentPlayerScore = 0
 
          }
@@ -103,11 +105,13 @@ function endOfGame() {
 }
 
 $capybaras.on('click', function() {
+    clickSound.play()
     currentPlayerScore += 75
     setScore()
 })
     
 $quokkas.on('click', function() {
+    squeakSound.play()
     currentPlayerScore -= 150
     setScore()
 

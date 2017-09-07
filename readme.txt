@@ -11,4 +11,17 @@ Catch as many as you can, but don’t disturb the happy Quokkas!
  Player with the most points wins!
 
 
-Trello Link: https://trello.com/b/w64tQT84/cappy-catch
+Game: https://lucmorey.github.io/Cappy_Catch/
+Trello: https://trello.com/b/w64tQT84/cappy-catch
+
+
+known errors: 
+
+Capybara and Quokka noises don’t sound every single time you click on them, as if they can only sound once every two seconds or so. Reduced the length of the mp3’s to as short as possible, but did not solve the problem.
+
+Walkthrough:
+
+Cappy Catch is a simple 2 player whack-a-mole style game that is set on a fifty square board made of divs. When game pieces are clicked points are awarded or deducted. The pieces then move randomly to different squares using a Math.random function and applying a .length  and putting it in an .eq(), which will select the div square number that corresponds to the random number generated. Then the function performs an ‘if’ condition that will append the game piece to the new square, but only if it is unpopulated. If the square is populated by another game piece, the function will continue running itself until an unpopulated square has been chosen.(Recursion)
+The game pieces use an .on click that uses these functions to select an unpopulated square and append it there.
+
+The start button triggers a function that first hides the overlay. (The overlay sits on top of the board like a piece of plexiglass, rendering it unresponsive.) The start button also starts the music, the countdown timer, and uses functions previously mentioned to  randomly move the game pieces to an unpopulated square every 1.5 seconds. Another function determines when the countdown is over and then switches players accordingly. The next function then compares the two scores and announces a winner, which is used in the final function, which calls it at the end of player 2’s turn.

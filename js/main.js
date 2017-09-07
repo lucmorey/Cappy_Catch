@@ -1,5 +1,5 @@
-var capybaraIMG = $("<img src= 'capybara.jpg' alt=''>")
-var quokkaIMG = $("<img src= 'quokka.png' alt=''>")
+var capybaraIMG = $("<img src= 'images/capybara.jpg' alt=''>")
+var quokkaIMG = $("<img src= 'images/quokka.png' alt=''>")
 var $squares = $('.square')
 var $capybaras = $('img.capybara')
 var $quokkas = $('img.quokka')
@@ -14,16 +14,9 @@ var $player1Score = $('#player1Score')
 var $player2Score = $('#player2Score')
 var p1 = 0
 var p2 = 0 
-var clickSound = new Audio('capybaraClickSound.mp3')
-var backgroundMusic = new Audio('calliope.mp3')
-var squeakSound = new Audio('squeak.mp3')
-
-
-
-    $resetBtn.on('click', function() {
-        location.reload()
-    })
-
+var clickSound = new Audio('sounds/capybaraClickSound.mp3')
+var backgroundMusic = new Audio('sounds/calliope.mp3')
+var squeakSound = new Audio('sounds/squeak.mp3')
 
 function randomInt (n) {
     return Math.floor(Math.random()*n)
@@ -81,17 +74,17 @@ function countdown(){
 
 function setScore() {
     if (whichPlayer === 1) {
-        $player1Score.text(currentPlayerScore) //setting text on screen
-        p1 = currentPlayerScore //storing the score in memory for later
+        $player1Score.text(currentPlayerScore) 
+        p1 = currentPlayerScore 
     }
     else {
         $player2Score.text(currentPlayerScore)
         p2 = currentPlayerScore
     }
-    // console.log(p1, p2)
+    
 }
 function checkScore() {
-    // console.log(p1, p2)
+    
     
     if (p2 > p1) {
         alert("Player 2 Wins!")
@@ -122,5 +115,8 @@ $quokkas.on('click', function() {
 
 })
  
+$resetBtn.on('click', function() {
+    location.reload()
+})
 
 endOfGame()

@@ -1,4 +1,4 @@
-# Cappy Catch
+# Cappy Catch :bear:
 --
 *Your lawn has been overrun with Capybaras! (The largest rodent on earth!) Catch as many as you can, but don’t disturb the happy Quokkas!* 
 
@@ -16,10 +16,6 @@
 
 
 
-**known errors:**
-
-
-Capybara and Quokka noises don’t sound every single time you click on them, as if they can only sound once every two seconds or so. Reduced the length of the mp3’s to as short as possible, but did not solve the problem.
 
 **Walkthrough:**
 
@@ -27,3 +23,12 @@ Cappy Catch is a simple 2 player whack-a-mole style game that is set on a fifty 
 The game pieces use an .on click that uses these functions to select an unpopulated square and append it there.
 
 The start button triggers a function that first hides the overlay. (The overlay sits on top of the board like a piece of plexiglass, rendering it unresponsive.) The start button also starts the music, the countdown timer, and uses functions previously mentioned to  randomly move the game pieces to an unpopulated square every 1.5 seconds. Another function determines when the countdown is over and then switches players accordingly. The next function then compares the two scores and announces a winner, which is used in the final function, which calls it at the end of player 2’s turn.
+
+**known errors:**
+
+
+Capybara and Quokka noises don’t sound every single time you click on them, as if they can only sound once every two seconds or so. Reduced the length of the mp3’s to as short as possible, but did not solve the problem.
+
+*- Created using HTML, CSS, JavaScript, and JQuery.*
+
+
